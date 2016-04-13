@@ -9,6 +9,7 @@ public class Disc extends Rectangle {
 
     public Disc(int x, int y, int width, int height, Color color, HanoCanvas hanoCanvas){
         super(x, y, width, height, hanoCanvas, color);
+        //Coment  for test
     }
 
 
