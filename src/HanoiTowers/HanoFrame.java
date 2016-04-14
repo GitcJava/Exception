@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class HanoFrame extends JFrame {
-
+ // it's for test too
     JEditorPane text = new JEditorPane();
     HanoCanvas hanoCanvas = new HanoCanvas();
     public HanoFrame (){
