@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import figure.Figure;
 
 public class Tower extends Figure {
-    ArrayList<Disc> discList = new ArrayList<>();
+    private ArrayList<Disc> discList = new ArrayList<>();
 
     public final static int horWidth = 210;
     public final static int horHeight = 10;
@@ -21,7 +21,7 @@ public class Tower extends Figure {
     private int yArr[];
 
     public Tower(int x, int y, Color color, HanoCanvas hanoCanvas) {
-        super(x, y, horWidth, verHeight + horHeight, hanoCanvas,color);
+        super(x, y, horWidth, verHeight + horHeight,hanoCanvas,color);
         this.x = x;
         this.y = y;
         this.color = color;
@@ -29,7 +29,6 @@ public class Tower extends Figure {
 
         setTowersVertices();
     }
-
 
     private void setTowersVertices(){
         xArr = new int[8];
@@ -74,19 +73,51 @@ public class Tower extends Figure {
 
     }
 
+    public static int getHorWidth() {
+        return horWidth;
+    }
+
+    @Override
+    public int getY() {
+        return y;
+    }
+
+    @Override
+    public int getX() {
+        return x;
+    }
+
+    @Override
+    public Color getColor() {
+        return color;
+    }
+
+
+
     public Tower(int x, int y, HanoCanvas hanoCanvas) {
-        super(x, y, horWidth, verHeight, hanoCanvas);
+        this(x, y, Color.RED, hanoCanvas);
     }
 
     public ArrayList<Disc> getDiscList() {
+        discList.size();
         return discList;
+
     }
 
     @Override
     public void draw(Graphics g) {
-        g.drawPolygon(xArr,yArr,8);
+        g.fillPolygon(xArr,yArr,8);
         for (Disc disc : discList) {
             disc.draw(g);
+        }
+    }
+
+    public void addDiscs(int discsNum){
+        int cUnit = horWidth / discsNum;
+        int modul = horWidth % discsNum;
+        for (int i = 0; i < discsNum ; i++) {
+            discList.add(new Disc(x + modul/2 + (i*cUnit/2), y + (verHeight - (i * (8 + 1)) - 10),
+                    (discsNum - i)*cUnit, 8,hanoCanvas));
         }
     }
 
