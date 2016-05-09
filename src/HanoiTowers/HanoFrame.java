@@ -43,8 +43,12 @@ public class HanoFrame extends JFrame {
 
     }
     private void loadActionPerformed(ActionEvent e){
-       int n = Integer.parseInt(text.getText());
+       if(Integer.parseInt(text.getText()) > 25 || Integer.parseInt(text.getText()) < 0 ){
+              JOptionPane.showMessageDialog(null,"write less than 25 or more than 0");
+       }
+        else { int n = Integer.parseInt(text.getText());
         hanoCanvas.load(n);
+       };
     }
     private void startActionPerformed(ActionEvent e){
         hanoCanvas.start();
