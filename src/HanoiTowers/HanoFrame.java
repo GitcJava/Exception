@@ -25,7 +25,7 @@ public class HanoFrame extends JFrame {
         start.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                startActionPerformed(e);
             }
         });
 
@@ -34,7 +34,7 @@ public class HanoFrame extends JFrame {
         controlPanel.add(start);
 
         setSize(800,600);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
         setLocation(200,50);
 
@@ -46,7 +46,9 @@ public class HanoFrame extends JFrame {
        int n = Integer.parseInt(text.getText());
         hanoCanvas.load(n);
     }
-
+    private void startActionPerformed(ActionEvent e){
+        hanoCanvas.start();
+    }
     public static void main(String[] args) {
         new HanoFrame();
     }

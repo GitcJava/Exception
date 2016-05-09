@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ResourceBundleManager">
+    <file url="file://$PROJECT_DIR$/resources/i18n/labels.properties" />
+    <file url="file://$PROJECT_DIR$/resources/i18n/labels_hy.properties" />
+    <file url="file://$PROJECT_DIR$/resources/i18n/labels_ru.properties" />
+    <custom-resource-bundle>
+      <file value="file://$PROJECT_DIR$/resources/i18n/labels.properties" />
+      <file value="file://$PROJECT_DIR$/resources/i18n/labels_hy.properties" />
+      <file value="file://$PROJECT_DIR$/resources/i18n/labels_ru.properties" />
+      <base-name>labels</base-name>
+    </custom-resource-bundle>
+  </component>
+</project>
