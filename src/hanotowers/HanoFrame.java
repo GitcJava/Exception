@@ -1,4 +1,4 @@
-package HanoiTowers;
+package hanotowers;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,7 +9,8 @@ public class HanoFrame extends JFrame {
 
     JEditorPane text = new JEditorPane();
     HanoCanvas hanoCanvas = new HanoCanvas();
-    public HanoFrame (){
+
+    public HanoFrame() {
         super("Hano Towers");
         JButton load = new JButton("Load");
         JButton start = new JButton("Start");
@@ -33,26 +34,25 @@ public class HanoFrame extends JFrame {
         controlPanel.add(load);
         controlPanel.add(start);
 
-        setSize(800,600);
+        setSize(800, 600);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
-        setLocation(200,50);
+        setLocation(200, 50);
 
         add(controlPanel, BorderLayout.NORTH);
-        add(hanoCanvas,BorderLayout.CENTER);
+        add(hanoCanvas, BorderLayout.CENTER);
 
     }
-    private void loadActionPerformed(ActionEvent e){
-       if(Integer.parseInt(text.getText()) > 25 || Integer.parseInt(text.getText()) < 0 ){
-              JOptionPane.showMessageDialog(null,"write less than 25 or more than 0");
-       }
-        else { int n = Integer.parseInt(text.getText());
-        hanoCanvas.load(n);
-       };
+
+    private void loadActionPerformed(ActionEvent e) {
+        int n = Integer.parseInt(text.getText());
+        hanoCanvas.loadDiscs(n);
     }
-    private void startActionPerformed(ActionEvent e){
+
+    private void startActionPerformed(ActionEvent e) {
         hanoCanvas.start();
     }
+
     public static void main(String[] args) {
         new HanoFrame();
     }
